@@ -1,2 +1,7 @@
 #!/usr/bin/env node
-console.log("Hello, Hexlet!");
+
+import sayHi from "../src/cli.js";
+
+console.log("Welcome to the Brain Games!");
+
+sayHi();
