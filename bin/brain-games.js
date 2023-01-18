@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-import sayHi from "../src/cli.js";
+// eslint-disable-next-line import/extensions
+import sayHi from '../src/cli.js';
 
-console.log("Welcome to the Brain Games!");
+// eslint-disable-next-line no-console
+console.log('Welcome to the Brain Games!');
 
 sayHi();
