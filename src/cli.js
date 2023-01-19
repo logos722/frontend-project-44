@@ -9,4 +9,5 @@ const sayHi = () => {
   return userName;
 };
 
-export default sayHi;
+// eslint-disable-next-line import/prefer-default-export
+export { sayHi };
