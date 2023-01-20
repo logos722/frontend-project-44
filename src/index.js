@@ -4,7 +4,7 @@ import readlineSync from 'readline-sync';
 import { sayHi } from './cli.js';
 
 function num() {
-  const number = (Math.round(Math.random() * 50));
+  const number = Math.round(Math.random() * 50);
   return number;
 }
 
@@ -19,6 +19,50 @@ function randomSign() {
   const randomS = Math.floor(Math.random() * signs.length);
   const rand = signs[randomS];
   return rand;
+}
+
+function getRandomStep() {
+  return Math.floor(Math.random() * (11 - 2) + 2);
+}
+
+function getRandomLength() {
+  return Math.floor(Math.random() * (10 - 5) + 5);
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+function progression() {
+  const step = getRandomStep();
+  const result = [];
+  let j = num();
+  const goal = getRandomLength();
+  for (let i = 0; i < goal; i += 1) {
+    result.push(j);
+    j += step;
+  }
+  return result;
+}
+
+function ad() {
+  const result = progression();
+  let numberind;
+  const number = getRandomInt(result.length);
+  const coll = [];
+  for (let i = 0; i <= result.length - 1; i += 1) {
+    if (i === number) {
+      numberind = result[i];
+      coll.push('..');
+    } else {
+      coll.push(result[i]);
+    }
+  }
+  let str = '';
+  str = `${str}${coll}`;
+  const re = /,/gi;
+  const newstr = str.replace(re, ' ');
+  return [newstr, numberind];
 }
 
 function calculate(num1, num2, sign) {
@@ -40,11 +84,18 @@ function evenGame() {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
     const randomNum = num();
-    const answer = readlineSync.question(`${'Question: '}${randomNum}${'\nYour answer: '}`);
-    if ((randomNum % 2 === 0 && answer === 'yes') || (randomNum % 2 !== 0 && answer === 'no')) {
+    const answer = readlineSync.question(
+      `${'Question: '}${randomNum}${'\nYour answer: '}`
+    );
+    if (
+      (randomNum % 2 === 0 && answer === 'yes') ||
+      (randomNum % 2 !== 0 && answer === 'no')
+    ) {
       console.log('Coorect!');
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+      console.log(
+        `${answer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`
+      );
       return;
     }
   }
@@ -59,13 +110,17 @@ function calculateGame() {
     const num2 = num();
     const sign = randomSign();
     const str = '';
-    const quest = readlineSync.question(`${'Question: '}${num1} ${sign} ${num2} ${'\nYour answer: '}`);
+    const quest = readlineSync.question(
+      `${'Question: '}${num1} ${sign} ${num2} ${'\nYour answer: '}`
+    );
     const nedeedAnswer = calculate(num1, num2, sign);
     const rightAnswer = `${str}${nedeedAnswer}`;
     if (quest === rightAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${quest}${' is wrong answer ;(. Correct answer was '}${rightAnswer}${'\nLet`s try again'}, ${userName}!`);
+      console.log(
+        `${quest}${' is wrong answer ;(. Correct answer was '}${rightAnswer}${'\nLet`s try again'}, ${userName}!`
+      );
       return;
     }
   }
@@ -79,19 +134,53 @@ function nodeGame() {
     const num1 = num();
     const num2 = num();
     const str = '';
-    const quest = readlineSync.question(`${'Question: '}${num1} ${num2} ${'\nYour answer: '}`);
+    const quest = readlineSync.question(
+      `${'Question: '}${num1} ${num2} ${'\nYour answer: '}`
+    );
     const rightAnswer = NOD(num1, num2);
     const rightAnswerStr = `${str}${rightAnswer}`;
     if (quest === rightAnswerStr) {
       console.log('Correct!');
     } else {
-      console.log(`${quest}${' is wrong answer ;(. Correct answer was '}${rightAnswerStr}${'\nLet`s try again'}, ${userName}!`);
+      console.log(
+        `${quest}${' is wrong answer ;(. Correct answer was '}${rightAnswerStr}${'\nLet`s try again'}, ${userName}!`
+      );
       return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
 }
 
+function gameProgressive() {
+  const userName = sayHi();
+  console.log('What number is missing in the progression?');
+  for (let i = 0; i < 3; i += 1) {
+    const fullProgression = ad();
+    const progressionBody = fullProgression[0];
+    const nedeedNumber = fullProgression[1];
+    const quest = readlineSync.question(
+      `${'Question: '}${progressionBody} ${'\nYour answer: '}`
+    );
+    let rightAnswer = '';
+    rightAnswer = `${rightAnswer}${nedeedNumber}`;
+    if (quest === rightAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(
+        `${quest} ${'is wrong answer ;(. Correct answer was'} ${rightAnswer}. ${"\nLet's try again"}, ${userName}!`
+      );
+      return;
+    }
+  }
+  console.log(`${'Congratulations'}, ${userName}!`);
+}
+
 export {
-  num, randomSign, calculate, calculateGame, evenGame, nodeGame,
+  num,
+  randomSign,
+  calculate,
+  calculateGame,
+  evenGame,
+  nodeGame,
+  gameProgressive,
 };
