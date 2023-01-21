@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable import/extensions */
 
-import { primeGame } from '../src/index.js';
+import startGame from "../src/games/brain-prime-game.js";
 
-primeGame();
+startGame();

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable import/extensions */
 
-import { gameProgressive } from '../src/index.js';
+import startGame from "../src/games/brain-progression-game.js";
 
-gameProgressive();
+startGame();

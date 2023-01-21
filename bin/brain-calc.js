@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable import/extensions */
-import { calculateGame } from '../src/index.js';
 
-calculateGame();
+import startGame from '../src/games/brain-calculate-game.js';
+
+startGame();

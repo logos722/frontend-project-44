@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable import/extensions */
 
-import { nodeGame } from '../src/index.js';
+import startGame from "../src/games/brain-gcd-game.js";
 
-nodeGame();
+startGame();
