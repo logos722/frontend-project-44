@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 import readlineSync from 'readline-sync';
@@ -79,6 +80,19 @@ function calculate(num1, num2, sign) {
   return sign;
 }
 
+function isPrime(n) {
+  let i = 2;
+  const limit = Math.sqrt(n);
+  while (i <= limit) {
+    if (n % i === 0) {
+      return 'no';
+    }
+    i += 1;
+  }
+
+  return 'yes';
+}
+
 function evenGame() {
   const userName = sayHi();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -88,8 +102,8 @@ function evenGame() {
       `${'Question: '}${randomNum}${'\nYour answer: '}`
     );
     if (
-      (randomNum % 2 === 0 && answer === 'yes') ||
-      (randomNum % 2 !== 0 && answer === 'no')
+      (randomNum % 2 === 0 && answer === 'yes')
+      || (randomNum % 2 !== 0 && answer === 'no')
     ) {
       console.log('Coorect!');
     } else {
@@ -175,6 +189,27 @@ function gameProgressive() {
   console.log(`${'Congratulations'}, ${userName}!`);
 }
 
+function primeGame() {
+  const userName = sayHi();
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  for (let i = 0; i < 3; i += 1) {
+    const num1 = num();
+    const primeCheck = isPrime(num1);
+    const quest = readlineSync.question(
+      `${'Question: '}${num1}${'\nYour answer:'}`
+    );
+    if (quest === primeCheck) {
+      console.log('Correct!');
+    } else {
+      console.log(
+        `${quest}${' is wrong answer ;(. Correct answer was '}${primeCheck}${'\nLet`s try again'}, ${userName}!`
+      );
+      return;
+    }
+  }
+  console.log(`Congratulations, ${userName}!`);
+}
+
 export {
   num,
   randomSign,
@@ -183,4 +218,5 @@ export {
   evenGame,
   nodeGame,
   gameProgressive,
+  primeGame,
 };
