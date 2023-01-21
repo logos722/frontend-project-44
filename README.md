@@ -4,7 +4,7 @@
 <a href="https://codeclimate.com/github/logos722/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/af9c4d6793386ed3375c/maintainability" /></a>
 <a href="https://codeclimate.com/github/logos722/frontend-project-44/test_coverage"><img src="https://api.codeclimate.com/v1/badges/af9c4d6793386ed3375c/test_coverage" /></a>
 
-Hello, frend! Welcome to my first project 'Brain Games'!
+Hello, freand! Welcome to my first project 'Brain Games'!
 
 Description:
 
