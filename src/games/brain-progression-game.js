@@ -14,10 +14,12 @@ function progression() {
   const result = [];
   let progressionNumber = getRandomNumber();
   const progressionLength = getRandomFromRangeOf(5, 10);
+
   for (let i = 0; i < progressionLength; i += 1) {
     result.push(progressionNumber);
     progressionNumber += stepSize;
   }
+
   return result;
 }
 
@@ -26,6 +28,7 @@ function selectHideElmnt() {
   let hidenElement;
   const number = getRandomOnlyMax(result.length);
   const coll = [];
+
   for (let i = 0; i <= result.length - 1; i += 1) {
     if (i === number) {
       hidenElement = result[i];
@@ -34,10 +37,8 @@ function selectHideElmnt() {
       coll.push(result[i]);
     }
   }
-  let str = '';
-  str = `${str}${coll}`;
-  const re = /,/gi;
-  const completeProgression = str.replace(re, ' ');
+  const completeProgression = coll.join(' ');
+
   return [completeProgression, hidenElement];
 }
 
@@ -46,8 +47,8 @@ function gameProgressive() {
   const progressionBody = fullProgression[0];
   const nedeedNumber = fullProgression[1];
   const quest = `${progressionBody}`;
-  let rightAnswer = '';
-  rightAnswer = `${rightAnswer}${nedeedNumber}`;
+  const rightAnswer = `${nedeedNumber}`;
+
   return [quest, rightAnswer];
 }
 

@@ -9,10 +9,12 @@ const isEven = (num) => num % 2 === 0;
 function evenGame() {
   const question = getRandomNumber();
   let rightAnswer;
+
   if (isEven(question)) {
     rightAnswer = 'yes';
-    return [question, rightAnswer];
-  } rightAnswer = 'no';
+  } else {
+    rightAnswer = 'no';
+  }
   return [question, rightAnswer];
 }
 

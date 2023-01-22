@@ -23,6 +23,7 @@ function randomSign() {
   const signs = ['+', '-', '*'];
   const random = Math.floor(Math.random() * signs.length);
   const randSign = signs[random];
+
   return randSign;
 }
 
@@ -30,10 +31,10 @@ function calculateGame() {
   const num1 = getRandomNumber();
   const num2 = getRandomNumber();
   const sign = randomSign();
-  const str = '';
   const question = `${num1} ${sign} ${num2}`;
   const nedeedAnswer = calculate(num1, num2, sign);
-  const rightAnswer = `${str}${nedeedAnswer}`;
+  const rightAnswer = `${nedeedAnswer}`;
+
   return [question, rightAnswer];
 }
 

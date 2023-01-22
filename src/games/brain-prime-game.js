@@ -6,6 +6,7 @@ const description = 'Answer "yes" if given number is prime. Otherwise answer "no
 
 function isPrime(n) {
   if (n === 0 || n === 1) return 'no';
+
   let i = 2;
   const limit = Math.sqrt(n);
   while (i <= limit) {
