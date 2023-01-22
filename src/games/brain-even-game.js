@@ -4,11 +4,7 @@ import getRandomNumber from '../Suporte-module/get-random.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return 'yes';
-  } return 'no';
-};
+const isEven = (num) => num % 2 === 0;
 
 function evenGame() {
   const question = getRandomNumber();
