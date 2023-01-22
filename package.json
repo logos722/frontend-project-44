@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/logos722/frontend-project-44#readme",
   "dependencies": {
-    "brain-games": "^1.1.5",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "mkdirp": "^2.1.3",
