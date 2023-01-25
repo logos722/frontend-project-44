@@ -10,8 +10,8 @@ parserOptions:
   ecmaVersion: latest
 
 rules:
-  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }],
-  comma-dangle: ["error", "never"],
+  no-underscore-dangle: 0
+  comma-dangle: 0
   import/extensions: [
     "error",
     "ignorePackages",
@@ -21,6 +21,6 @@ rules:
         "ts": "never",
         "tsx": "never"
       }
-  ],
-  no-console: "off",
-  no-unused-expressions: ["error", { "allowTernary": true }]
+  ]
+  no-console: 0
+  no-unused-expressions: 0
