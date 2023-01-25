@@ -9,9 +9,11 @@ function evenGame() {
   const question = getRandomNumber();
   let rightAnswer;
 
-  isEven(question) ? rightAnswer = 'yes' : rightAnswer = 'no';
+ isEven(question) ?  rightAnswer = 'yes' :  rightAnswer = 'no';
 
-  return [question, rightAnswer];
+ return [question, rightAnswer]
 }
+
+console.log(evenGame())
 
 export default () => startGame(description, evenGame);

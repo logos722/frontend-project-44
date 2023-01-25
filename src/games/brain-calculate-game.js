@@ -12,7 +12,7 @@ function calculate(num1, num2, sign) {
     case '+':
       return num1 + num2;
     default:
-      throw new Error(`Unknown order state: '${order.state}'!`);
+      throw new Error(`Unknown order state: '${sign}'!`);
   }
 }
 

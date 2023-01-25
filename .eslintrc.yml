@@ -22,4 +22,5 @@ rules:
         "tsx": "never"
       }
   ],
-  "no-console": "off",
+  no-console: "off",
+  eslint no-unused-expressions: ["error", { "allowTernary": true }]
