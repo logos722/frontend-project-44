@@ -4,11 +4,11 @@ import { getRandomNumber } from '../utils/get-random.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 function getGCD(x, y) {
-  if (y > x) return NOD(y, x);
+  if (y > x) return getGCD(y, x);
 
   if (!y) return x;
 
-  return NOD(y, x % y);
+  return getGCD(y, x % y);
 }
 
 function gcdGame() {
