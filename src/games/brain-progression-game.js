@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import {getRandomNumber, getRandomFromRangeOf} from '../utils/get-random.js';
+import { getRandomNumber, getRandomFromRangeOf } from '../utils/get-random.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -25,17 +25,17 @@ function selectHideElmnt() {
   const result = progression();
   let hidenElement;
   const number = getRandomOnlyMax(result.length);
-  const coll = [];
+  const collection = [];
 
   for (let i = 0; i <= result.length - 1; i += 1) {
     if (i === number) {
       hidenElement = result[i];
-      coll.push('..');
+      collection.push('..');
     } else {
-      coll.push(result[i]);
+      collection.push(result[i]);
     }
   }
-  const completeProgression = coll.join(' ');
+  const completeProgression = collection.join(' ');
 
   return [completeProgression, hidenElement];
 }
@@ -44,8 +44,8 @@ function gameProgressive() {
   const fullProgression = selectHideElmnt();
   const progressionBody = fullProgression[0];
   const nedeedNumber = fullProgression[1];
-  const quest = `${progressionBody}`;
-  const rightAnswer = `${nedeedNumber}`;
+  const quest = progressionBody.toString();
+  const rightAnswer = nedeedNumber.toString();
 
   return [quest, rightAnswer];
 }

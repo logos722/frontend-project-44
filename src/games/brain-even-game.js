@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import {getRandomNumber} from '../utils/get-random.js';
+import { getRandomNumber } from '../utils/get-random.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -9,11 +9,8 @@ function evenGame() {
   const question = getRandomNumber();
   let rightAnswer;
 
-  if (isEven(question)) {
-    rightAnswer = 'yes';
-  } else {
-    rightAnswer = 'no';
-  }
+  isEven(question) ? rightAnswer = 'yes' : rightAnswer = 'no';
+
   return [question, rightAnswer];
 }
 

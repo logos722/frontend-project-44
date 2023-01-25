@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import {getRandomNumber} from '../utils/get-random.js';
+import { getRandomNumber } from '../utils/get-random.js';
 
 const description = 'What is the result of the expression?';
 
@@ -12,14 +12,13 @@ function calculate(num1, num2, sign) {
     case '+':
       return num1 + num2;
     default:
-      console.log('error');
+      throw new Error(`Unknown order state: '${order.state}'!`);
   }
-  return sign;
 }
 
 function randomSign() {
   const signs = ['+', '-', '*'];
-  const random = Math.floor(Math.random() * signs.length);
+  const random = getRandomNumber(signs.length);
   const randSign = signs[random];
 
   return randSign;
