@@ -12,15 +12,9 @@ parserOptions:
 rules:
   no-underscore-dangle: 0
   comma-dangle: 0
-  import/extensions: [
-    "error",
-    "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-  ]
+  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
+  - error
+  - ignorePackages
+  - js: always
   no-console: 0
   no-unused-expressions: 0
