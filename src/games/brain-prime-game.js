@@ -1,6 +1,5 @@
-/* eslint-disable import/extensions */
 import startGame from '../index.js';
-import getRandomNumber from '../Suporte-module/get-random.js';
+import {getRandomNumber} from '../utils/get-random.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

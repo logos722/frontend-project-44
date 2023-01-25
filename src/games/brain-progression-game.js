@@ -1,7 +1,5 @@
-/* eslint-disable import/extensions */
 import startGame from '../index.js';
-import getRandomNumber from '../Suporte-module/get-random.js';
-import getRandomFromRangeOf from '../Suporte-module/get-random-in-range.js';
+import {getRandomNumber, getRandomFromRangeOf} from '../utils/get-random.js';
 
 const description = 'What number is missing in the progression?';
 

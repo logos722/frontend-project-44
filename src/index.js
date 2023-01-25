@@ -1,6 +1,3 @@
-/* eslint-disable comma-dangle */
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
 import readlineSync from 'readline-sync';
 import sayHi from './cli.js';
 
