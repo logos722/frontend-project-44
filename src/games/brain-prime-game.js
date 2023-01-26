@@ -20,7 +20,7 @@ function isPrime(n) {
 function primeGame() {
   const num1 = getRandomNumber();
   const rightAnswer = isPrime(num1) ? 'yes' : 'no';
-  const question = `${num1}`;
+  const question = num1.toString();
   return [question, rightAnswer];
 }
 
